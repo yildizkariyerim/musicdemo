@@ -1,8 +1,16 @@
--- =========================================
+-- ==================================================
 -- MUSIC STREAMING USER ANALYSIS PROJECT
--- =========================================
+-- ==================================================
+-- Project Goal:
+-- Analyze user behavior, engagement patterns,
+-- subscription preferences, and churn indicators
+-- using SQL.
+-- ==================================================
 
+
+-- ==================================================
 -- 1. TABLE CREATION
+-- ==================================================
 
 CREATE TABLE music_streaming (
     user_id TEXT,
@@ -17,43 +25,67 @@ CREATE TABLE music_streaming (
     churned INTEGER
 );
 
+
+-- ==================================================
 -- 2. DATA INSERTION
--- Buraya kamp boyunca kullandığımız INSERT INTO kodlarını ekleyin.
+-- ==================================================
+-- Dataset records inserted using INSERT INTO
+-- statements.
 
--- 3. BASIC QUERIES
+-- INSERT INTO music_streaming VALUES (...);
 
+
+-- ==================================================
+-- 3. BASIC DATA EXPLORATION
+-- ==================================================
+
+-- View all records
 SELECT *
 FROM music_streaming;
 
+-- Select specific columns
 SELECT user_id, country, subscription_type, daily_minutes
 FROM music_streaming;
 
+-- Premium users
 SELECT *
 FROM music_streaming
 WHERE subscription_type = 'premium';
 
+-- High engagement users
 SELECT *
 FROM music_streaming
 WHERE daily_minutes > 100;
 
+-- Top 10 users by listening time
 SELECT *
 FROM music_streaming
 ORDER BY daily_minutes DESC
 LIMIT 10;
 
--- 4. AGGREGATION QUERIES
 
+-- ==================================================
+-- 4. AGGREGATION ANALYSIS
+-- ==================================================
+
+-- Total number of users
 SELECT COUNT(*) AS total_users
 FROM music_streaming;
 
+-- Total listening minutes
 SELECT SUM(daily_minutes) AS total_daily_minutes
 FROM music_streaming;
 
+-- Average listening minutes
 SELECT AVG(daily_minutes) AS avg_daily_minutes
 FROM music_streaming;
 
--- 5. GROUP BY ANALYSIS
 
+-- ==================================================
+-- 5. GROUP BY ANALYSIS
+-- ==================================================
+
+-- Subscription type analysis
 SELECT
     subscription_type,
     COUNT(*) AS user_count,
@@ -62,6 +94,7 @@ SELECT
 FROM music_streaming
 GROUP BY subscription_type;
 
+-- Churn analysis
 SELECT
     churned,
     COUNT(*) AS user_count,
@@ -70,6 +103,7 @@ SELECT
 FROM music_streaming
 GROUP BY churned;
 
+-- Country analysis
 SELECT
     country,
     COUNT(*) AS user_count,
@@ -78,6 +112,7 @@ FROM music_streaming
 GROUP BY country
 ORDER BY avg_daily_minutes DESC;
 
+-- Device analysis
 SELECT
     device,
     COUNT(*) AS user_count,
@@ -86,6 +121,7 @@ SELECT
 FROM music_streaming
 GROUP BY device;
 
+-- Genre analysis
 SELECT
     favorite_genre,
     COUNT(*) AS user_count,
@@ -95,12 +131,17 @@ FROM music_streaming
 GROUP BY favorite_genre
 ORDER BY avg_skip_rate DESC;
 
--- 6. DATA QUALITY CHECKS
 
+-- ==================================================
+-- 6. DATA QUALITY CHECKS
+-- ==================================================
+
+-- Missing values
 SELECT *
 FROM music_streaming
 WHERE skip_rate IS NULL;
 
+-- Potential outliers
 SELECT *
 FROM music_streaming
 WHERE daily_minutes > 300;
