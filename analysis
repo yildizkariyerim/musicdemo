@@ -1,0 +1,92 @@
+3"}
+# 📊 Analysis Results & Insights
+
+## 1. Premium Kullanıcılar Daha Aktif
+
+Abonelik tipine göre yapılan analiz sonucunda Premium kullanıcıların platform üzerinde daha fazla zaman geçirdiği görülmüştür.
+
+| Abonelik Tipi | Ortalama Günlük Dinleme Süresi |
+|---------------|-------------------------------|
+| Premium | 135.7 dakika |
+| Free | 45.3 dakika |
+
+### İçgörü
+
+Premium kullanıcılar platformla daha yüksek etkileşim göstermektedir. Bu durum ücretli üyeliklerin kullanıcı bağlılığı üzerindeki etkisini göstermektedir.
+
+---
+
+## 2. Skip Rate ve Churn İlişkisi
+
+Churn eden kullanıcıların ortalama skip rate değerleri incelenmiştir.
+
+| Churn Durumu | Ortalama Skip Rate |
+|-------------|-------------------|
+| Aktif Kullanıcı | %13.6 |
+| Churn Eden Kullanıcı | %53.4 |
+
+### İçgörü
+
+Yüksek skip rate değerine sahip kullanıcıların platformu terk etme olasılığı daha yüksektir. Skip rate metriği churn tahmini için önemli bir gösterge olabilir.
+
+---
+
+## 3. Ülke Bazlı Kullanıcı Analizi
+
+| Ülke | Ortalama Günlük Dinleme Süresi |
+|-------|------------------------------|
+| Almanya | 131.9 dakika |
+| Fransa | 129.5 dakika |
+| İngiltere | 125.2 dakika |
+| Türkiye | 49.8 dakika |
+
+### İçgörü
+
+Türkiye'deki kullanıcıların ortalama dinleme süresi diğer ülkelere kıyasla daha düşüktür. Bölgesel kullanıcı davranışları farklılık göstermektedir.
+
+---
+
+## 4. Müzik Türü Analizi
+
+| Tür | Ortalama Skip Rate |
+|------|------------------|
+| Hip-Hop | %56.9 |
+| Pop | %47.2 |
+| Rock | %16.8 |
+| Jazz | %10.3 |
+| Classical | %9.1 |
+
+### İçgörü
+
+Hip-Hop ve Pop kategorilerinde kullanıcıların şarkı geçme oranları daha yüksektir. Bu kategoriler için öneri sistemleri geliştirilebilir.
+
+---
+
+## 5. Veri Kalitesi Kontrolleri
+
+Analiz sırasında aşağıdaki veri kalitesi problemleri tespit edilmiştir:
+
+- 2 adet eksik değer
+- 1 adet aykırı değer (400 dakika günlük dinleme süresi)
+
+### İçgörü
+
+Analiz öncesinde veri temizleme adımlarının uygulanması sonuçların güvenilirliği açısından kritik öneme sahiptir.
+
+---
+
+# 💡 İş Önerileri
+
+Analiz sonuçlarına göre aşağıdaki aksiyonlar önerilebilir:
+
+- Yüksek skip rate gösteren kullanıcılar için churn önleme çalışmaları yapılabilir.
+- Free kullanıcıların Premium üyeliğe geçişini destekleyen kampanyalar geliştirilebilir.
+- Kullanıcı deneyimi cihaz bazında detaylı incelenebilir.
+- Churn tahmin modellerinde skip rate önemli bir değişken olarak kullanılabilir.
+- Kullanıcı segmentasyonu ile kişiselleştirilmiş öneriler sunulabilir.
+
+---
+
+## Genel Sonuç
+
+Analiz sonuçları kullanıcı etkileşimi, abonelik tipi ve churn davranışı arasında anlamlı ilişkiler olduğunu göstermektedir. Özellikle skip rate ve dinleme süresi metrikleri kullanıcı davranışlarını anlamak ve müşteri kaybını azaltmak için önemli göstergeler olarak öne çıkmaktad
